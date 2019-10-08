@@ -46,7 +46,7 @@ const PostList = (props) => {
                                 >
                                     <h2 className="title">{post.node.frontmatter.title}</h2>
                                 </Link>
-                                <small className="d-block text-info"><i>{post.node.frontmatter.date}</i>
+                                <small className="d-block text-info"><i>Published on {post.node.frontmatter.date}</i>
                                 </small>
                                 <p className="mt-3 d-inline">{post.node.excerpt}</p>
                                 <div className="d-block">
@@ -105,7 +105,7 @@ export const listQuery = graphql`
                  id
                  frontmatter {
                    title
-                   date(formatString: "MMMM DD, YYYY")
+                   date(formatString: "YYYY-MM-DD")
                    tags
                  }
                  fields {

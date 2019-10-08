@@ -1,5 +1,7 @@
 html {
-  font-family: sans-serif;
+/*   font-family: sans-serif; */
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -615,6 +617,9 @@ pre code:after,
 pre tt:before,
 pre tt:after {
   content: "";
+}
+10vh {
+  height: 10vh;
 }
 @media only screen and (max-width: 480px) {
   html {

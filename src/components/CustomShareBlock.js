@@ -20,7 +20,7 @@ const CustomShareBlock = props => {
         longtext: siteName
     };
     return (
-        <div className="mt-4">
+        <div className="mt-5">
             <ShareBlockStandard {...shareBlockProps} />
             <p className="text-center"><i>If you like it, share it!</i></p>
         </div>

@@ -6,7 +6,7 @@ import willjw3 from "../../images/willjw3.jpg"
 const Bio = ({ author, tagline }) => {
 
     return (
-        <div className="bio-main w-75">
+        <div className="bio-main w-100">
             {/*<img src={willjw3} style={{ maxWidth: `100px` }} className="profile-img" alt="" />*/}
             <h4 className="mb-3">Author</h4>
             <h5 className="m-2"> {author}</h5>

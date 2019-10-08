@@ -2,19 +2,18 @@
 
 module.exports = {
   url: "https://developer-diary.netlify.com",
-  title: "Developer Diary",
-  tagline: "Autodidact developer and sometimes hoop-jumper",
+  title: "アンドロイドは推理小説を書くか?",
+  tagline: "自然言語処理を中心に技術系の記事を書いていきます。最終的には、AIに推理小説を書かせたい。普段はフロント/バックエンド開発。主に使うのは、scala、golang, vue.js, angular、python、keras",
   copyright: "© 2019 willjw3, All rights reserved",
   author: {
-    name: "WILL JAY",
-    bio: "Self-taught web developer and whisky aficionado",
+    name: "いふ",
+    bio: "bio",
     contacts: {
-      linkedin: "https://www.linkedin.com/in/will-ward-65234a170/",
-      github: "https://github.com/willjw3",
-      stackoverflow:
-        "https://stackoverflow.com/users/17262432/will-ward?tab=profile",
-      freecodecamp: "https://www.freecodecamp.org/willjw3",
-      twitter: "https://twitter.com/willjw3",
+      linkedin: "",
+      github: "https://github.com/if001",
+      stackoverflow:"",
+      freecodecamp: "",
+      twitter: "https://twitter.com/if_004",
     },
   },
   labels: [
@@ -23,7 +22,8 @@ module.exports = {
       tech: "React",
       name: "DiReact",
       size: 17,
-      color: "deepskyblue",
+      // color: "deepskyblue",
+      color: "black",
     },
     {
       tag: "nodejs",
@@ -37,14 +37,16 @@ module.exports = {
       tech: "Git",
       name: "DiGitMerge",
       size: 17,
-      color: "white",
+      // color: "white",
+      color: "black",
     },
     {
       tag: "javascript",
       tech: "JavaScript",
       name: "DiJsBadge",
       size: 17,
-      color: "yellow",
+      // color: "yellow",
+      color: "black"
     },
     {
       tag: "css",

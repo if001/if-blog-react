@@ -40,21 +40,20 @@ const BlogPost = (props) => {
         <div className="post-main p-4">
           <SEO title={post.frontmatter.title} />
           <div className="mt-3">
-            <h2 className="heading">{post.frontmatter.title}</h2>
+            <h1 className="heading">{post.frontmatter.title}</h1>
             <div className="d-block">
               {getTechTags(tags)}
             </div>
             <br />
-            <small><i>Published on </i> {post.frontmatter.date}</small>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <small className="float-right mr-4"><i></i>Published on {post.frontmatter.date}</small>
+            <div className="mt-5" dangerouslySetInnerHTML={{ __html: post.html }} />
             <CustomShareBlock title={post.frontmatter.title} siteName={siteName} url={url} />
           </div>
         </div>
 
-        <div className="sidebar px-4 py-2">
-          <div className="position-fixed">
-            <h2>目次</h2>
-            <div dangerouslySetInnerHTML={{ __html: tableOfContents }}/>
+        <div className="sidebar-table-of-content px-4 py-2">
+          <div className="table-of-content position-fixed">          
+            <div className="table-of-content" dangerouslySetInnerHTML={{ __html: tableOfContents }}/>
           </div>
         </div>
 
@@ -82,7 +81,7 @@ export const query = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY-MM-DD")
         tags
       }
       tableOfContents

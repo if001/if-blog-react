@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
                 backgroundColor: "rgb(238, 238, 238)"
             }}
           >
-            <main className="p-4">{children}</main>
+            <main className="p-4 pt-5">{children}</main>
             <footer className="text-center">
               <hr/>
               <p className="d-inline">© {new Date().getFullYear()} <a className="text-info" href="https://willjw3.github.io/">willjw3</a>, All Rights Reserved.</p>

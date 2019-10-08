@@ -1,11 +1,15 @@
 
 p, .title {
-  font-family: "Raleway";
+/*   font-family: "Raleway"; */
+font-family: 'Roboto', sans-serif;
+font-family: 'Noto Sans JP', sans-serif;
+  border-bottom: 0px;
 }
 
 .index-main {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
+    flex-wrap: wrap;
 } 
 
 .sidebar {
@@ -17,7 +21,7 @@ p, .title {
 }
 
 @media only screen and (max-width: 850px) {
-  .sidebar{display: none;}
+/*   .sidebar{display: none;} */
   .index-main{
     display: flex;
     flex-direction: row;

@@ -35,10 +35,6 @@ const Tag = ({ pageContext, data }) => {
         <Layout>
             <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `node.js`, `graphql`]} />
             <div className="index-main">
-                <div className="sidebar px-4 py-2">
-                    <Sidebar />
-                </div>
-
                 <div className="post-list-main">
                     <i><h2 className="heading">{tagHeader}</h2></i>
                     {posts.map((post) => {
@@ -51,21 +47,18 @@ const Tag = ({ pageContext, data }) => {
                                 >
                                     <h2 className="heading">{post.node.frontmatter.title}</h2>
                                 </Link>
-                                <small className="d-block text-info">Posted on {post.node.frontmatter.date}
+                                <small className="d-block text-info">{post.node.frontmatter.date}
                                 </small>
                                 <p className="mt-3 d-inline">{post.node.excerpt}</p>
-                                <Link
-                                    to={post.node.fields.slug}
-                                    className="text-primary"
-                                >
-                                    <small className="d-inline-block ml-3"> Read full post</small>
-                                </Link>
                                 <div className="d-block">
                                     {getTechTags(tags)}
                                 </div>
                             </div>
                         )
                     })}
+                </div>
+                <div className="sidebar px-4 py-2">
+                    <Sidebar />
                 </div>
             </div>
         </Layout>
@@ -120,7 +113,7 @@ export const pageQuery = graphql`
             id
             frontmatter {
                 title
-                date(formatString: "MMMM, YYYY")
+                date(formatString: "YYYY-MM-DD")
                 tags
             }
              fields {
