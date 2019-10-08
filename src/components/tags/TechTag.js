@@ -23,6 +23,6 @@ const TechTag = (props) => {
         </div>
 
     )
-}
+};
 
 export default TechTag

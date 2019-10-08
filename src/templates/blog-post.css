@@ -11,7 +11,9 @@
     width: 90%;
 }
 
-
+.post-main {
+    background-color: white;
+}
 .post {
     border-radius: 80%;
 }

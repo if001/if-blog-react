@@ -90,6 +90,7 @@ export const pageQuery = graphql`
                node {
                  excerpt(pruneLength: 200)
                  html
+                 tableOfContents
                  id
                  frontmatter {
                    title

@@ -9,34 +9,35 @@ import TechTag from "../components/tags/TechTag"
 import CustomShareBlock from "../components/CustomShareBlock"
 
 const BlogPost = (props) => {
-  const post = props.data.markdownRemark
-  const labels = props.data.site.siteMetadata.labels
-  const siteName = props.data.site.siteMetadata.title 
-  const siteUrl = props.data.site.siteMetadata.url
+  const post = props.data.markdownRemark;
+  const labels = props.data.site.siteMetadata.labels;
+  const siteName = props.data.site.siteMetadata.title ;
+  const siteUrl = props.data.site.siteMetadata.url;
   const url = `${siteUrl}${props.pageContext.slug}`;
-  const tags = post.frontmatter.tags
+  const tags = post.frontmatter.tags;
+
+  //const tableOfContents = props.data.allMarkdownRemark.tableOfContents;
 
   const getTechTags = (tags) => {
-    const techTags = []
+    const techTags = [];
     tags.forEach((tag, i) => {
       labels.forEach((label) => {
         if (tag === label.tag) {
           techTags.push(<TechTag key={i} tag={label.tag} tech={label.tech} name={label.name} size={label.size} color={label.color} />)
         }
       })
-    })
+    });
     return techTags
-  }
+  };
+  console.log("blogpost:",post);
+  const tableOfContents = post.tableOfContents;
+
 
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
       <div className="post-page-main">
-        <div className="sidebar px-4 py-2">
-          <Sidebar />
-        </div>
-
-        <div className="post-main">
+        <div className="post-main p-4">
           <SEO title={post.frontmatter.title} />
           <div className="mt-3">
             <h2 className="heading">{post.frontmatter.title}</h2>
@@ -49,10 +50,18 @@ const BlogPost = (props) => {
             <CustomShareBlock title={post.frontmatter.title} siteName={siteName} url={url} />
           </div>
         </div>
+
+        <div className="sidebar px-4 py-2">
+          <div className="position-fixed">
+            <h2>目次</h2>
+            <div dangerouslySetInnerHTML={{ __html: tableOfContents }}/>
+          </div>
+        </div>
+
       </div>
     </Layout>
   )
-}
+};
 
 export const query = graphql`
   query($slug: String!) {
@@ -76,8 +85,9 @@ export const query = graphql`
         date(formatString: "MMMM DD, YYYY")
         tags
       }
+      tableOfContents
     }
   }
-`
+`;
 
 export default BlogPost
