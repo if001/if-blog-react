@@ -5,14 +5,16 @@ p, .title {
 
 .index-main {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 1fr;
 } 
 
 .sidebar {
     width: 90%;
 }
 
-
+.post {
+    border-radius: 80%;
+}
 
 @media only screen and (max-width: 850px) {
   .sidebar{display: none;}

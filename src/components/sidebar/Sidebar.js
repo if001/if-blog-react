@@ -1,5 +1,5 @@
 import React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
+import {StaticQuery, graphql, Link} from "gatsby"
 import Bio from "./Bio"
 import "./sidebar.css"
 
@@ -49,20 +49,18 @@ const Sidebar = () => {
                 }
             `}
             render={data => (
-                <>
-                    <div className="sidebar-main border-right">
-                        <Bio author={data.site.siteMetadata.author} tagline={data.site.siteMetadata.tagline} />
-                        <SocialLinks contacts={data.site.siteMetadata.contacts} />
-                        <div className="page-links">
-                            <Link to="/"><span className="text-dark d-block py-1">Blog Home</span></Link>
-                            <Link to="/about"><span className="text-dark d-block py-1">About</span></Link>
-                            <Link to="/archive"><span className="text-dark d-block py-1">Archive</span></Link>
-                        </div>
-                        <div className="tech-tags mt-4">
-                            <TechTags labels={data.site.siteMetadata.labels} posts={data.allMarkdownRemark.edges} />
-                        </div>
+                <div className="sidebar-main ">
+                    <div className="tech-tags mt-0">
+                        <TechTags labels={data.site.siteMetadata.labels} posts={data.allMarkdownRemark.edges}/>
                     </div>
-                </>
+
+                    <div className="mt-4">
+                        <Bio author={data.site.siteMetadata.author} tagline={data.site.siteMetadata.tagline}/>
+                    </div>
+
+                    <SocialLinks contacts={data.site.siteMetadata.contacts}/>
+
+                </div>
             )}
         />
     )

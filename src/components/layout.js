@@ -43,9 +43,10 @@ const Layout = ({ children }) => {
             contacts={data.site.siteMetadata.contacts} />
           <div
             style={{
-              margin: `0 auto`,
-              padding: `0px 1.0875rem 1.45rem`,
-              paddingTop: 0,
+                margin: `0 auto`,
+                padding: `0px 1.0875rem 1.45rem`,
+                paddingTop: 0,
+                backgroundColor: "gray"
             }}
           >
             <main className="p-4">{children}</main>

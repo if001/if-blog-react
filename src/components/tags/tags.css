@@ -3,9 +3,9 @@ h4 {
 }
 
 .tech-tag {
-    background: black;
-    border-radius: 0%;
-    border-color: black;
+    background: dimgray;
+    border-radius: .9rem / 50%;
+    border-color: dimgray;
     font-family: "Raleway";
-    font-size: .85rem;
+    font-size: .70rem;
 }

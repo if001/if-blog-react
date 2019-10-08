@@ -10,26 +10,26 @@ import Sidebar from "../components/sidebar/Sidebar"
 import TechTag from "../components/tags/TechTag"
 
 const Tag = ({ pageContext, data }) => {
-    const posts = data.allMarkdownRemark.edges
-    const labels = data.site.siteMetadata.labels
-    console.log(pageContext.tag)
-    const { tag } = pageContext
-    const { totalCount } = data.allMarkdownRemark
+    const posts = data.allMarkdownRemark.edges;
+    const labels = data.site.siteMetadata.labels;
+    console.log(pageContext.tag);
+    const { tag } = pageContext;
+    const { totalCount } = data.allMarkdownRemark;
     const tagHeader = `${totalCount} post${
         totalCount === 1 ? "" : "s"
-        } tagged with "${tag}"`
+        } tagged with "${tag}"`;
 
     const getTechTags = (tags) => {
-        const techTags = []
+        const techTags = [];
         tags.forEach((tag, i) => {
             labels.forEach((label) => {
                 if (tag === label.tag) {
-                    techTags.push(<TechTag key={i} tag={label.tag} tech={label.tech} name={label.name} size={label.size} color={label.color} />)
+                    techTags.push(<TechTag key={i} tag={label.tag} tech={label.tech} name={label.name} size={label.size} color={label.color} />);
                 }
             })
-        })
+        });
         return techTags
-    }
+    };
 
     return (
         <Layout>
@@ -70,7 +70,7 @@ const Tag = ({ pageContext, data }) => {
             </div>
         </Layout>
     )
-}
+};
 
 Tag.propTypes = {
     pageContext: PropTypes.shape({
@@ -90,7 +90,7 @@ Tag.propTypes = {
             ),
         }),
     }),
-}
+};
 
 export const pageQuery = graphql`
   query($tag: String) {
@@ -130,6 +130,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
 export default Tag
