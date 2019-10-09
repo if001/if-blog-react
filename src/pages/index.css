@@ -1,19 +1,15 @@
 
 p, .title {
-/*   font-family: "Raleway"; */
-font-family: 'Roboto', sans-serif;
-font-family: 'Noto Sans JP', sans-serif;
-  border-bottom: 0px;
+    /*   font-family: "Raleway"; */
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
+    border-bottom: 0px;
 }
 
 .index-main {
     display: grid;
     grid-template-columns: 3fr 1fr;
     flex-wrap: wrap;
-} 
-
-.sidebar {
-    width: 90%;
 }
 
 .post {
