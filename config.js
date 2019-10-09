@@ -2,11 +2,14 @@
 
 module.exports = {
   url: "https://developer-diary.netlify.com",
-  title: "アンドロイドは推理小説を書くか?",
-  tagline: "自然言語処理を中心に技術系の記事を書いていきます。最終的には、AIに推理小説を書かせたい。普段はフロント/バックエンド開発。主に使うのは、scala、golang, vue.js, angular、python、keras",
+  // title: "アンドロイドは推理小説を書くか?",
+  title: "てすと",
+  // tagline: "自然言語処理を中心に技術系の記事を書いていきます。最終的には、AIに推理小説を書かせたい。普段はフロント/バックエンド開発。主に使うのは、scala、golang, vue.js, angular、python、keras",
+  tagline: "tag line",
   copyright: "© 2019 willjw3, All rights reserved",
   author: {
-    name: "いふ",
+    // name: "いふ",
+    name: "author name",
     bio: "bio",
     contacts: {
       linkedin: "",

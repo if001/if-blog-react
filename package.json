@@ -16,6 +16,7 @@
     "gatsby-plugin-offline": "^2.1.1",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.1.1",
+    "gatsby-remark-autolink-headers": "^2.1.13",
     "gatsby-remark-prismjs": "^3.2.9",
     "gatsby-remark-responsive-iframe": "^2.1.1",
     "gatsby-remark-toc": "^1.2.0",

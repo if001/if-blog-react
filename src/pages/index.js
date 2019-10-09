@@ -31,9 +31,6 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]} />
       <div className="index-main">
-        {/*<div className="sidebar px-4 py-2">*/}
-        {/*  <Sidebar />*/}
-        {/*</div>*/}
         <div className="post-list-main">
           {posts.map((post) => {
             const tags = post.node.frontmatter.tags;

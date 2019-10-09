@@ -91,7 +91,8 @@ module.exports = {
         // Plugins configs
         plugins: [],
       },
-    },{
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         // CommonMark mode (default: true)
@@ -104,6 +105,12 @@ module.exports = {
         gfm: true,
         // Plugins configs
         plugins: [],
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-autolink-headers`],
       },
     },
   ],

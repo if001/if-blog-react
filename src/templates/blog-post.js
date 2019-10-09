@@ -52,7 +52,8 @@ const BlogPost = (props) => {
         </div>
 
         <div className="sidebar-table-of-content px-4 py-2">
-          <div className="table-of-content position-fixed">          
+          <div className="table-of-content position-fixed">
+            <h3>目次</h3>
             <div className="table-of-content" dangerouslySetInnerHTML={{ __html: tableOfContents }}/>
           </div>
         </div>
