@@ -6,32 +6,24 @@ import "./index.css"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Sidebar from "../components/sidebar/Sidebar"
-import TechTag from "../components/tags/TechTag"
-import {FaArrowRight, FaArrowLeft} from "react-icons/all";
+import {FaArrowRight, FaArrowLeft, FaTags} from "react-icons/fa";
+import GetTechTags from "../components/tags/GetTechTag";
 
 const IndexPage = ({data}) => {
     const posts = data.allMarkdownRemark.edges;
     const labels = data.site.siteMetadata.labels;
     const currentPage = 1;
     const nextPage = (currentPage + 1).toString();
+    const perPage = 10;
+    const isNext = data.allMarkdownRemark.totalCount > perPage;
 
     const getTechTags = (tags) => {
-        const techTags = [];
-        tags.forEach((tag, i) => {
-            labels.forEach((label) => {
-                if (tag === label.tag) {
-                    techTags.push(<TechTag key={i} tag={label.tag} tech={label.tech} name={label.name} size={label.size}
-                                           color={label.color}/>)
-                }
-            })
-        });
-        return techTags
+        return GetTechTags(tags, labels);
     };
-
 
     return (
         <Layout>
-            <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]}/>
+            <SEO title="" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]}/>
             <div className="container-fluid">
                 <div className="post-list-main">
                     <div className="row">
@@ -52,17 +44,22 @@ const IndexPage = ({data}) => {
                                         <p className="mt-3 d-inline">{post.node.excerpt}</p>
 
                                         <div className="d-block">
-                                            {getTechTags(tags)}
+                                            <span className="mr-2"><FaTags/></span>{getTechTags(tags)}
                                         </div>
                                     </div>
                                 )
                             })}
 
                             <div className="mt-4 text-center">
-                              <span className="mr-4" style={{color: "gray"}}><FaArrowLeft/> Prev</span>
-                              <Link to={nextPage} rel="next" style={{textDecoration: `none`}}>
-                                <span className="text-dark ml-4">Next <FaArrowRight/></span>
-                              </Link>
+                                <span className="mr-4" style={{color: "gray"}}><FaArrowLeft/> Prev</span>
+                                {isNext && (
+                                    <Link to={nextPage} rel="next" style={{textDecoration: `none`}}>
+                                        <span className="text-dark ml-4">Next <FaArrowRight/></span>
+                                    </Link>)
+                                }
+                                {!isNext && (
+                                    <span className="mr-4" style={{color: "gray"}}>Next <FaArrowRight/></span>)
+                                }
                             </div>
                         </div>
 
@@ -94,7 +91,7 @@ export const pageQuery = graphql`
 						 }
 					 }
 					 allMarkdownRemark(
-						 limit: 3
+						 limit: 10
 						 sort: { fields: [frontmatter___date], order: DESC }
 						 filter: { frontmatter: { published: { eq: true } } }
 					 ) {

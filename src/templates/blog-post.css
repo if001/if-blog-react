@@ -29,13 +29,27 @@
     /* font-family: "Raleway"; */
     font-family: 'Roboto', sans-serif;
     font-family: 'Noto Sans JP', sans-serif;
+    box-sizing: border-box;
 }
 .table-of-content * ul {
-  list-style: none;
+    list-style: none;
+    margin-left: 0.50rem;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    width: 100%;
 }
+.table-of-content * li {
+    margin-left: 0.20rem;
+    margin-bottom: 1px;
+    width: 100%;
+}
+
+/*.table-of-content * p {*/
+/*    margin-bottom: 0.20rem;*/
+/*}*/
 .table-of-content * a:link { color: dimgray; }
 .table-of-content * a:visited { color: dimgray; }
-.table-of-content * a:hover { color: dimgray; }
+.table-of-content * a:hover { color: dimgray;}
 .table-of-content * a:active { color: dimgray; }
 
 

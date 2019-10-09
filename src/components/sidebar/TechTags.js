@@ -1,47 +1,26 @@
 import React from "react"
-
-import TechTag from "../tags/TechTag"
+import GetTechTags from "../tags/GetTechTag";
 
 const TechTags = (props) => {
     const labels = props.labels;
     const posts = props.posts;
 
-    const labelCount = labels.map(label => {
-        let count = 0;
-        posts.forEach(post => {
-            if (post.node.frontmatter.tags.includes(label.tag)) {
-                count = count + 1
+    const tags = [];
+    posts.forEach((x) => {
+        x.node.frontmatter.tags.forEach((y) => {
+            if (!tags.includes(y)) {
+                tags.push(y);
             }
-        });
-        return [label.tag, count]
+        })
     });
-
-    const categories = labelCount.filter(label => {
-        return label[1] > 0
-    });
-
-    const tags = categories.map(category => {
-        return category[0]
-    });
-
-
 
     const getTechTags = (tags) => {
-        const techTags = [];
-        tags.forEach((tag, i) => {
-            labels.forEach((label) => {
-                if (tag === label.tag) {
-                    techTags.push(<TechTag key={i} tag={label.tag} tech={label.tech} name={label.name} size={label.size} color={label.color} />)
-                }
-            })
-        });
-        return techTags
+        return GetTechTags(tags, labels);
     };
-
 
     return (
         <>
-            <h4 className="mb-2">Tech Topics</h4>
+            <h4 className="mb-2">Tags</h4>
             <div className="d-block">
                 {getTechTags(tags)}
             </div>

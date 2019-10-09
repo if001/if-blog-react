@@ -3,9 +3,11 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "./blog-post.css"
+import "./codeblock.css"
 
-import TechTag from "../components/tags/TechTag"
 import CustomShareBlock from "../components/CustomShareBlock"
+import GetTechTags from "../components/tags/GetTechTag";
+import RelatedContent from "../components/relatedContent";
 
 const BlogPost = (props) => {
   const post = props.data.markdownRemark;
@@ -16,23 +18,15 @@ const BlogPost = (props) => {
   const tags = post.frontmatter.tags;
 
   const getTechTags = (tags) => {
-    const techTags = [];
-    tags.forEach((tag, i) => {
-      labels.forEach((label) => {
-        if (tag === label.tag) {
-          techTags.push(<TechTag key={i} tag={label.tag} tech={label.tech} name={label.name} size={label.size} color={label.color} />)
-        }
-      })
-    });
-    return techTags
+    return GetTechTags(tags, labels);
   };
-  console.log("blogpost:",post);
   const tableOfContents = post.tableOfContents;
 
 
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
+      <RelatedContent contents={post}/>
       <div className="post-page-main">
         <div className="post-main p-4">
           <SEO title={post.frontmatter.title} />
@@ -50,8 +44,12 @@ const BlogPost = (props) => {
 
         <div className="-table-of-content px-4 py-2">
           <div className="table-of-content position-fixed">
-            <h3>目次</h3>
-            <div className="table-of-content" dangerouslySetInnerHTML={{ __html: tableOfContents }}/>
+            {tableOfContents.length !== 0 && (
+                <>
+                  <h3>目次</h3>
+                  <div className="table-of-content" dangerouslySetInnerHTML={{__html: tableOfContents}}/>
+                </>)
+            }
           </div>
         </div>
 

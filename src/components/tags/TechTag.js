@@ -4,15 +4,15 @@ import * as Devicons from "react-icons/di"
 
 import "./tags.css"
 import { Link } from "gatsby";
+const _ = require("lodash");
 
 const TechTag = (props) => {
-    const { tag, tech, name, size, color } = props
+    const { tag, tech, name, size, color } = props;
     const str = name;
     const icon = /^Fa/.test(str) ? React.createElement(FontAwesome[name]) : React.createElement(Devicons[name]);
-
     return (
         <div className="d-inline-block p-1">
-            <Link to={`/tags/${tag}/`}>
+            <Link to={`/tags/${_.kebabCase(tag)}/`}>
                 <button
                     className="tech-tag">
                     <p className="d-inline">{tech} </p>

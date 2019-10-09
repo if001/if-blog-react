@@ -6,30 +6,20 @@ import "../pages/index.css"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Sidebar from "../components/sidebar/Sidebar"
-import TechTag from "../components/tags/TechTag"
-import {FaArrowRight, FaArrowLeft} from "react-icons/all";
+import GetTechTags from "../components/tags/GetTechTag"
+import {FaArrowRight, FaArrowLeft, FaTags} from "react-icons/fa";
 
 const PostList = (props) => {
     const posts = props.data.allMarkdownRemark.edges;
     const labels = props.data.site.siteMetadata.labels;
     const {currentPage, numPages} = props.pageContext;
-
     const isFirst = (currentPage === 1 || currentPage == null);
     const isLast = (currentPage === numPages || numPages == null);
     const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString();
     const nextPage = (currentPage + 1).toString();
 
     const getTechTags = (tags) => {
-        const techTags = [];
-        tags.forEach((tag, i) => {
-            labels.forEach((label) => {
-                if (tag === label.tag) {
-                    techTags.push(<TechTag key={i} tag={label.tag} tech={label.tech} name={label.name} size={label.size}
-                                           color={label.color}/>)
-                }
-            })
-        });
-        return techTags
+        return GetTechTags(tags, labels);
     };
 
     return (
@@ -54,7 +44,7 @@ const PostList = (props) => {
                                         </small>
                                         <p className="mt-3 d-inline">{post.node.excerpt}</p>
                                         <div className="d-block">
-                                            {getTechTags(tags)}
+                                            <span className="mr-2"><FaTags/></span>{getTechTags(tags)}
                                         </div>
                                     </div>
                                 )

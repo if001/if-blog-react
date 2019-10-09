@@ -4,12 +4,13 @@ h4 {
 }
 
 .tech-tag {
-    background: white;
+    background: inherit;
     border-radius: 60px;
- 
-    border-color: gray;
+
+    border-color: dimgray;
     font-family: 'Roboto', sans-serif;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 0.7rem;
+    font-weight: 400;
     color: dimgray;
 }
