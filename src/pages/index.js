@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Sidebar from "../components/sidebar/Sidebar"
 import TechTag from "../components/tags/TechTag"
+import {FaArrowRight, FaArrowLeft} from "react-icons/all";
 
 const IndexPage = ({data}) => {
     const posts = data.allMarkdownRemark.edges;
@@ -31,7 +32,7 @@ const IndexPage = ({data}) => {
     return (
         <Layout>
             <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]}/>
-          <div className="container-fluid">
+            <div className="container-fluid">
                 <div className="post-list-main">
                     <div className="row">
                         <div className="col-12 col-xl-9 col-lg-9">
@@ -57,11 +58,11 @@ const IndexPage = ({data}) => {
                                 )
                             })}
 
-
                             <div className="mt-4 text-center">
-                                <Link to={nextPage} rel="next" style={{textDecoration: `none`}}>
-                                    <span className="text-dark">Next Page →</span>
-                                </Link>
+                              <span className="mr-4" style={{color: "gray"}}><FaArrowLeft/> Prev</span>
+                              <Link to={nextPage} rel="next" style={{textDecoration: `none`}}>
+                                <span className="text-dark ml-4">Next <FaArrowRight/></span>
+                              </Link>
                             </div>
                         </div>
 

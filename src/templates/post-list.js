@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Sidebar from "../components/sidebar/Sidebar"
 import TechTag from "../components/tags/TechTag"
+import {FaArrowRight, FaArrowLeft} from "react-icons/all";
 
 const PostList = (props) => {
     const posts = props.data.allMarkdownRemark.edges;
@@ -59,14 +60,20 @@ const PostList = (props) => {
                                 )
                             })}
                             <div className="text-center mt-4">
+                                {isFirst && (
+                                    <span className="mr-4" style={{color: "gray"}}><FaArrowLeft/> Prev</span>
+                                )}
                                 {!isFirst && (
                                     <Link to={prevPage} rel="prev" style={{textDecoration: `none`}}>
-                                        <span className="text-dark">← Previous Page</span>
+                                        <span className="text-dark mr-4"><FaArrowLeft/> Prev</span>
                                     </Link>
+                                )}
+                                {isLast && (
+                                    <span className="ml-4" style={{color: "gray"}}>Next <FaArrowRight/></span>
                                 )}
                                 {!isLast && (
                                     <Link to={nextPage} rel="next" style={{textDecoration: `none`}}>
-                                        <span className="text-dark ml-5">Next Page →</span>
+                                        <span className="text-dark ml-4">Next <FaArrowRight/></span>
                                     </Link>
                                 )}
                             </div>
