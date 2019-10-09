@@ -49,7 +49,7 @@ const Sidebar = () => {
                 }
             `}
             render={data => (
-                <div className="sidebar-main ">
+                <div className="sidebar-main">
                     <div className="tech-tags mt-0">
                         <TechTags labels={data.site.siteMetadata.labels} posts={data.allMarkdownRemark.edges}/>
                     </div>

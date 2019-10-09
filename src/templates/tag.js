@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link, graphql } from "gatsby"
+import {Link, graphql} from "gatsby"
 import "bootstrap/dist/css/bootstrap.css"
 import "../pages/index.css"
 
@@ -9,22 +9,23 @@ import SEO from "../components/seo"
 import Sidebar from "../components/sidebar/Sidebar"
 import TechTag from "../components/tags/TechTag"
 
-const Tag = ({ pageContext, data }) => {
+const Tag = ({pageContext, data}) => {
     const posts = data.allMarkdownRemark.edges;
     const labels = data.site.siteMetadata.labels;
     console.log(pageContext.tag);
-    const { tag } = pageContext;
-    const { totalCount } = data.allMarkdownRemark;
+    const {tag} = pageContext;
+    const {totalCount} = data.allMarkdownRemark;
     const tagHeader = `${totalCount} post${
         totalCount === 1 ? "" : "s"
-        } tagged with "${tag}"`;
+    } tagged with "${tag}"`;
 
     const getTechTags = (tags) => {
         const techTags = [];
         tags.forEach((tag, i) => {
             labels.forEach((label) => {
                 if (tag === label.tag) {
-                    techTags.push(<TechTag key={i} tag={label.tag} tech={label.tech} name={label.name} size={label.size} color={label.color} />);
+                    techTags.push(<TechTag key={i} tag={label.tag} tech={label.tech} name={label.name} size={label.size}
+                                           color={label.color}/>);
                 }
             })
         });
@@ -33,32 +34,39 @@ const Tag = ({ pageContext, data }) => {
 
     return (
         <Layout>
-            <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `node.js`, `graphql`]} />
-            <div className="index-main">
+            <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `node.js`, `graphql`]}/>
+            <div className="container-fluid">
                 <div className="post-list-main">
-                    <i><h2 className="heading">{tagHeader}</h2></i>
-                    {posts.map((post) => {
-                        const tags = post.node.frontmatter.tags
-                        return (
-                            <div key={post.node.id} className="container mt-5">
-                                <Link
-                                    to={post.node.fields.slug}
-                                    className="text-dark"
-                                >
-                                    <h2 className="heading">{post.node.frontmatter.title}</h2>
-                                </Link>
-                                <small className="d-block text-info">{post.node.frontmatter.date}
-                                </small>
-                                <p className="mt-3 d-inline">{post.node.excerpt}</p>
-                                <div className="d-block">
-                                    {getTechTags(tags)}
-                                </div>
+                    <div className="row">
+                        <div className="col-12 col-xl-9 col-lg-9 mb-5">
+                            <i><h2 className="heading">{tagHeader}</h2></i>
+                            {posts.map((post) => {
+                                const tags = post.node.frontmatter.tags;
+                                return (
+                                    <div key={post.node.id} className="container mt-5">
+                                        <Link
+                                            to={post.node.fields.slug}
+                                            className="text-dark"
+                                        >
+                                            <h2 className="heading">{post.node.frontmatter.title}</h2>
+                                        </Link>
+                                        <small className="d-block text-info">{post.node.frontmatter.date}
+                                        </small>
+                                        <p className="mt-3 d-inline">{post.node.excerpt}</p>
+                                        <div className="d-block">
+                                            {getTechTags(tags)}
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                        </div>
+
+                        <div className="col-12 col-xl-3 col-lg-3">
+                            <div className="px-4 py-2">
+                                <Sidebar/>
                             </div>
-                        )
-                    })}
-                </div>
-                <div className="sidebar px-4 py-2">
-                    <Sidebar />
+                        </div>
+                    </div>
                 </div>
             </div>
         </Layout>

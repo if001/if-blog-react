@@ -34,42 +34,51 @@ const PostList = (props) => {
     return (
         <Layout>
             <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]}/>
-            <div className="index-main">
+            <div className="container-fluid">
                 <div className="post-list-main">
-                    {posts.map((post) => {
-                        const tags = post.node.frontmatter.tags;
-                        return (
-                            <div key={post.node.id} className="container card mb-5 p-3 bg-white">
-                                <Link
-                                    to={post.node.fields.slug}
-                                    className="text-dark"
-                                >
-                                    <h2 className="title">{post.node.frontmatter.title}</h2>
-                                </Link>
-                                <small className="d-block text-info"><i>Published on {post.node.frontmatter.date}</i>
-                                </small>
-                                <p className="mt-3 d-inline">{post.node.excerpt}</p>
-                                <div className="d-block">
-                                    {getTechTags(tags)}
-                                </div>
+                    <div className="row">
+                        <div className="col-12 col-xl-9 col-lg-9 mb-5">
+                            {posts.map((post) => {
+                                const tags = post.node.frontmatter.tags;
+                                return (
+                                    <div key={post.node.id} className="container card mb-5 p-3 bg-white">
+                                        <Link
+                                            to={post.node.fields.slug}
+                                            className="text-dark"
+                                        >
+                                            <h2 className="title">{post.node.frontmatter.title}</h2>
+                                        </Link>
+                                        <small className="d-block text-info"><i>Published
+                                            on {post.node.frontmatter.date}</i>
+                                        </small>
+                                        <p className="mt-3 d-inline">{post.node.excerpt}</p>
+                                        <div className="d-block">
+                                            {getTechTags(tags)}
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                            <div className="text-center mt-4">
+                                {!isFirst && (
+                                    <Link to={prevPage} rel="prev" style={{textDecoration: `none`}}>
+                                        <span className="text-dark">← Previous Page</span>
+                                    </Link>
+                                )}
+                                {!isLast && (
+                                    <Link to={nextPage} rel="next" style={{textDecoration: `none`}}>
+                                        <span className="text-dark ml-5">Next Page →</span>
+                                    </Link>
+                                )}
                             </div>
-                        )
-                    })}
-                    <div className="text-center mt-4">
-                        {!isFirst && (
-                            <Link to={prevPage} rel="prev" style={{textDecoration: `none`}}>
-                                <span className="text-dark">← Previous Page</span>
-                            </Link>
-                        )}
-                        {!isLast && (
-                            <Link to={nextPage} rel="next" style={{textDecoration: `none`}}>
-                                <span className="text-dark ml-5">Next Page →</span>
-                            </Link>
-                        )}
+                        </div>
+
+                        <div className="col-12 col-xl-3 col-lg-3">
+                            <div className="px-4 py-2">
+                                <Sidebar/>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div className="sidebar px-4 py-2">
-                    <Sidebar/>
+
                 </div>
             </div>
         </Layout>
@@ -77,44 +86,44 @@ const PostList = (props) => {
 };
 
 export const listQuery = graphql`
-         query paginateQuery($skip: Int!, $limit: Int!) {
-           site {
-             siteMetadata {
-               title 
-               author
-               labels {
-                 tag
-                 tech 
-                 name 
-                 size 
-                 color
-               } 
-             }
-           }
-           allMarkdownRemark(
-             limit: $limit
-             skip: $skip
-             sort: { fields: [frontmatter___date], order: DESC }
-             filter: { frontmatter: { published: { eq: true } } }
-           ) {
-             totalCount
-             edges {
-               node {
-                 excerpt(pruneLength: 200)
-                 html
-                 id
-                 frontmatter {
-                   title
-                   date(formatString: "YYYY-MM-DD")
-                   tags
-                 }
-                 fields {
-                   slug
-                 }
-               }
-             }
-           }
-         }
-       `;
+				 query paginateQuery($skip: Int!, $limit: Int!) {
+					 site {
+						 siteMetadata {
+							 title 
+							 author
+							 labels {
+								 tag
+								 tech 
+								 name 
+								 size 
+								 color
+							 } 
+						 }
+					 }
+					 allMarkdownRemark(
+						 limit: $limit
+						 skip: $skip
+						 sort: { fields: [frontmatter___date], order: DESC }
+						 filter: { frontmatter: { published: { eq: true } } }
+					 ) {
+						 totalCount
+						 edges {
+							 node {
+								 excerpt(pruneLength: 200)
+								 html
+								 id
+								 frontmatter {
+									 title
+									 date(formatString: "YYYY-MM-DD")
+									 tags
+								 }
+								 fields {
+									 slug
+								 }
+							 }
+						 }
+					 }
+				 }
+			 `;
 
 export default PostList
