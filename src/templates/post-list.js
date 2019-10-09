@@ -13,8 +13,9 @@ const PostList = (props) => {
     const posts = props.data.allMarkdownRemark.edges;
     const labels = props.data.site.siteMetadata.labels;
     const {currentPage, numPages} = props.pageContext;
-    const isFirst = currentPage === 1;
-    const isLast = currentPage === numPages;
+
+    const isFirst = (currentPage === 1 || currentPage == null);
+    const isLast = (currentPage === numPages || numPages == null);
     const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString();
     const nextPage = (currentPage + 1).toString();
 
@@ -30,7 +31,6 @@ const PostList = (props) => {
         });
         return techTags
     };
-
 
     return (
         <Layout>

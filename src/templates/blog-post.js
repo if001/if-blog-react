@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "./blog-post.css"
 
-import Sidebar from "../components/sidebar/Sidebar"
 import TechTag from "../components/tags/TechTag"
 import CustomShareBlock from "../components/CustomShareBlock"
 
@@ -15,8 +14,6 @@ const BlogPost = (props) => {
   const siteUrl = props.data.site.siteMetadata.url;
   const url = `${siteUrl}${props.pageContext.slug}`;
   const tags = post.frontmatter.tags;
-
-  //const tableOfContents = props.data.allMarkdownRemark.tableOfContents;
 
   const getTechTags = (tags) => {
     const techTags = [];
@@ -51,7 +48,7 @@ const BlogPost = (props) => {
           </div>
         </div>
 
-        <div className="sidebar-table-of-content px-4 py-2">
+        <div className="-table-of-content px-4 py-2">
           <div className="table-of-content position-fixed">
             <h3>目次</h3>
             <div className="table-of-content" dangerouslySetInnerHTML={{ __html: tableOfContents }}/>

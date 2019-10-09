@@ -3,10 +3,6 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import titleLogo from "../../images/title.png"
 
-import MobileSocialLinks from "./MobileSocialLinks"
-import MobilePageLinks from "./MobilePageLinks"
-import SocialLinks from "./SocialLinks"
-import MobileBio from "./MobileBio"
 import "./header.css"
 
 const Header = ({ siteTitle, tagline, author, contacts }) => {
@@ -31,11 +27,7 @@ const Header = ({ siteTitle, tagline, author, contacts }) => {
 {/*             <img src={titleLogo} style={{ maxWidth: `400px` }} alt="title" /> */}
           </Link>
         </h1>
-        {/*<SocialLinks contacts={contacts} />*/}
       </div>
-      {/*<MobileSocialLinks contacts={contacts} />*/}
-      {/*<MobilePageLinks />*/}
-      {/*<MobileBio author={author} />*/}
     </header>
   )
 };
