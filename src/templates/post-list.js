@@ -119,7 +119,7 @@ export const listQuery = graphql`
 								 }
 							 }
 						 }
-					 }
+                     }
 				 }
 			 `;
 

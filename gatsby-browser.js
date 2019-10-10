@@ -6,7 +6,8 @@
 
 // You can delete this file if you're not using it
 
-require("./src/templates/codeblock.css");
-require("prismjs/themes/prism-solarizedlight.css");
+// require("./src/templates/codeblock.css");
+require("prismjs/themes/prism-tomorrow.css");
+// require("prismjs/themes/prism-solarizedlight.css");
 require("prismjs/plugins/line-numbers/prism-line-numbers.css");
 require(`katex/dist/katex.min.css`)

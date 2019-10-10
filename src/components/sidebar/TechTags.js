@@ -4,16 +4,16 @@ import GetTechTags from "../tags/GetTechTag";
 const TechTags = (props) => {
     const labels = props.labels;
     const posts = props.posts;
-
     const tags = [];
     posts.forEach((x) => {
         x.node.frontmatter.tags.forEach((y) => {
-            if (!tags.includes(y)) {
-                tags.push(y);
+            const low = y.toLowerCase();        
+            if (!tags.includes(low)) {
+                tags.push(low);
             }
         })
     });
-
+    
     const getTechTags = (tags) => {
         return GetTechTags(tags, labels);
     };

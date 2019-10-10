@@ -7,7 +7,7 @@ import "./codeblock.css"
 
 import CustomShareBlock from "../components/CustomShareBlock"
 import GetTechTags from "../components/tags/GetTechTag";
-import RelatedContent from "../components/relatedContent";
+// import RelatedContent from "../components/relatedContent";
 
 const BlogPost = (props) => {
   const post = props.data.markdownRemark;
@@ -26,7 +26,6 @@ const BlogPost = (props) => {
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
-      <RelatedContent contents={post}/>
       <div className="post-page-main">
         <div className="post-main p-4">
           <SEO title={post.frontmatter.title} />

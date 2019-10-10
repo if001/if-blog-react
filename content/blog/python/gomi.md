@@ -1,7 +1,7 @@
 ---
 title: 'gomi'
 tags: ["python","hoge_huga"]
-published: true
+published: false
 date: '2019-10-10'
 ---
 
