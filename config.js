@@ -60,8 +60,8 @@ module.exports = {
       color: "teal",
     },
     {
-      tag: "",
-      tech: "Python",
+      tag: "python",
+      tech: "python",
       name: "DiPython",
       size: 17,
       color: "dodgerblue",

@@ -5,6 +5,7 @@ import "./sidebar.css"
 
 import SocialLinks from "./SocialLinks"
 import TechTags from "./TechTags"
+import WebService from "./WebService";
 
 
 const Sidebar = () => {
@@ -60,6 +61,7 @@ const Sidebar = () => {
 
                     <SocialLinks contacts={data.site.siteMetadata.contacts}/>
 
+                    <WebService/>
                 </div>
             )}
         />

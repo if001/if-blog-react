@@ -12,7 +12,7 @@ const GetTechTags = (tags, labels) => {
             }
         });
         if (!isInclude) {
-            techTags.push(<TechTag key={i} tag={tag} tech={tag} name={"FaTools"} size={15} color={"black"} />)
+            techTags.push(<TechTag key={i} tag={tag} tech={tag} name={"FaTools"} size={17} color={"black"} />)
         }
     });
     return techTags
