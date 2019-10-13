@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "gatsby-remark-code-titles": "^1.1.0",
+    "gh-pages": "^2.1.1",
     "prettier": "^1.17.1"
   },
   "keywords": [
@@ -49,6 +50,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",

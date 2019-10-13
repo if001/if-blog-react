@@ -41,12 +41,13 @@ const BlogPost = (props) => {
           </div>
         </div>
 
-        <div className="-table-of-content px-4 py-2">
-          <div className="table-of-content position-fixed">
-            {tableOfContents.length !== 0 && (
+        <div className="table-of-content px-4 py-2">
+          {/*<div className="position-fixed">*/}
+          <div className="sticky mt-2">
+          {tableOfContents.length !== 0 && (
                 <>
                   <h3>目次</h3>
-                  <div className="table-of-content" dangerouslySetInnerHTML={{__html: tableOfContents}}/>
+                  <div className="table-of-content-inner" dangerouslySetInnerHTML={{__html: tableOfContents}}/>
                 </>)
             }
           </div>

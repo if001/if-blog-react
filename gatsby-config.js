@@ -3,6 +3,7 @@
 const siteConfig = require("./config");
 
 module.exports = {
+  pathPrefix: "/if-blog-react",
   siteMetadata: {
     url: siteConfig.url,
     siteUrl: siteConfig.url,
