@@ -5,6 +5,7 @@ tags: ["deeplearning", "seq2seq","nlp","論文"]
 date: "2019-09-24T00:00:00+09:00"
 published: true
 ---
+
 Qiitaに投稿した記事、[kerasでHREDを構築してみる](https://qiita.com/iss-f/items/0b5a2766e789213b42c1)の記事で、こちらの論文が参考になるとのコメント頂いて、読んで見たので簡単にまとめました。
 
 A Diversity-Promoting Objective Function for Neural Conversation Models
@@ -40,14 +41,14 @@ $$\{\log p(T|S) - \log p(T)\} = \frac{\log p(S,T)}{\log p(S) \log p(T)}$$
 
 また、$\log p(T)$は、seq2seqの標準的な目的関数に対するペナルティ項とみなすことができる。メッセージに対するありふれた応答に対してペナルティを与えることで、応答の多様性を保つことを期待している。
 
-このペナルティー項を調節できるように、(2)式に対して、パラメタ$\lambda$を追加する。
-これを、**MMI-antiLM**と呼ぶ。
-$$\hat{T} = argmax_T \{\log p(T|S) - \lambda \log p(T)\} \tag{1}$$
+このペナルティー項を調節できるように、(2)式に対して、パラメタ$\lambda$を追加する。これを、**MMI-antiLM**と呼ぶ。
 
+$$\hat{T} = argmax_T \{\log p(T|S) - \lambda \log p(T)\} --(1)$$
 
-式(3)をベイズの定理を用いて変形すると、以下のようになる。
-これを**MMI-bidi**と呼ぶ
-$$\hat{T} = argmax_T \{(1-\lambda)\log p(T|S) + \lambda \log p(S|T)\} \tag{2} $$
+式(3)をベイズの定理を用いて変形すると、以下のようになる。これを**MMI-bidi**と呼ぶ
+
+$$\hat{T} = argmax_T \{(1-\lambda)\log p(T|S) + \lambda \log p(S|T)\} --(2)$$
+
 MMI-bidiでは、$p(T|S)$と$p(S|T)$がトレードオフの関係にあることがわかる。
 
 seq2seqモデルの学習にMMIを適応させることは、重要ではない。さらに、モデルの訓練に時間がかかるので、訓練なしに$\lambda$を調整したい。そこで、モデルを訓練するのではなく、学習時には最尤モデルを、テスト時にMMI基準を使用する。

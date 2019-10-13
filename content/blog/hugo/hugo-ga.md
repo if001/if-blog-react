@@ -1,7 +1,7 @@
 ---
 title: "Hugoにgoogle analyticsを導入する"
 slug: "hugo-ga"
-tags: ["google analytics","hugo"]
+tags: ["google-analytics","hugo"]
 date: "2018-10-16T00:00:00+09:00"
 published: true
 ---

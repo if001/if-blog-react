@@ -3,7 +3,7 @@ title: "KaTeXを使ってみる"
 slug: "katex-introduction"
 tags: ["hugo"]
 date: "2018-10-16T00:00:00+09:00"
-published: true
+published: false
 ---
 
 これまでMathJaxを使っていたが、描画が遅いということもあり、KaTeXを使ってみることにしました。
