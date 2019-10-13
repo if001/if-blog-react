@@ -8,7 +8,9 @@ const WebService = () => {
             <h4 className="mb-3">WebService</h4>
             <div className="m-2">
                 <div>三行感想文</div>
-                <a href="" target="_blank">https://bookreports.edgwbs.net</a>
+                <a href="https://bookreports.edgwbs.net" 
+                    rel="noopener noreferrer"
+                    target="_blank">https://bookreports.edgwbs.net</a>
             </div>
 
             {/*<div className="m-2">*/}

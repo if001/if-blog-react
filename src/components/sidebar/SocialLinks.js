@@ -14,6 +14,7 @@ const SocialLinks = ({contacts}) => {
                 <div className="col-1 ma-2">
                     <a className="text-secondary p-2"
                        href={contacts.github}
+                       rel="noopener noreferrer"
                        target="_blank">
                         <span title="GitHub">
                             <FaGithubSquare size={26} style={{color: "secondary"}}/>
@@ -24,6 +25,7 @@ const SocialLinks = ({contacts}) => {
                 <div className="col-1 ma-2">
                     <a className="text-secondary p-2"
                        href={contacts.twitter}
+                       rel="noopener noreferrer"
                        target="_blank">
                         <span title="Twitter">
                             <FaTwitterSquare size={26} style={{color: "secondary"}}/>
