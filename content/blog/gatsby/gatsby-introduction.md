@@ -161,6 +161,25 @@ https://nakawork.net/posts/gatsby-toc
 ## google analytics
 https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/
 
+## google adsense
+`$ npm install --save gatsby-plugin-google-adsense
+`
+
+```jsonld=
+// In your gatsby-config.js file
+plugins: [
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: `ca-pub-xxxxxxxxxx`
+      },
+    },
+]
+```
+
+プロジェクトのrootディレクトリにstaticディレクトリを作成。  
+staticディレクトリ以下に、CNAMEファイル、ads.txtを追加。  
+
 ## サイトマップ
 以下のプラグインを使うことで、build時にsitemap.xmlが生成されます。
 
