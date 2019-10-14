@@ -17,6 +17,7 @@ const PostList = (props) => {
     const isLast = (currentPage === numPages || numPages == null);
     const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString();
     const nextPage = (currentPage + 1).toString();
+    const siteName = props.data.site.siteMetadata.title;
 
     const getTechTags = (tags) => {
         return GetTechTags(tags, labels);
@@ -24,7 +25,7 @@ const PostList = (props) => {
 
     return (
         <Layout>
-            <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]}/>
+            <SEO title={siteName} keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]}/>
             <div className="container-fluid">
                 <div className="post-list-main">
                     <div className="row">
@@ -119,7 +120,7 @@ export const listQuery = graphql`
 								 }
 							 }
 						 }
-                     }
+					 }
 				 }
 			 `;
 

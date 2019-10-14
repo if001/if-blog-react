@@ -3,7 +3,7 @@ title: "emacsひな祭りいってきたのでためになったpackageなどを
 slug: "emacs-hinamatsuri"
 tags: ["emacs"]
 date: "2019-03-08T00:00:00+09:00"
-published: false
+published: true
 ---
 
 2019年3月3日に開催された東京Emacsひなまつりにいってきました。   

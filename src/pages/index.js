@@ -16,14 +16,14 @@ const IndexPage = ({data}) => {
     const nextPage = (currentPage + 1).toString();
     const perPage = 10;
     const isNext = data.allMarkdownRemark.totalCount > perPage;
-
+    const siteName = data.site.siteMetadata.title;
     const getTechTags = (tags) => {
         return GetTechTags(tags, labels);
     };
 
     return (
         <Layout>
-            <SEO title="" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]}/>
+            <SEO title={siteName} keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]}/>
             <div className="container-fluid">
                 <div className="post-list-main">
                     <div className="row">
