@@ -41,6 +41,8 @@
 <url> <loc>https://www.if-blog.site/python/colaboratory_google_drive/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.if-blog.site/python/python-get-ext/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.if-blog.site/gatsby/gatsby-introduction/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.if-blog.site/edgwbs/book_storage_start/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.if-blog.site/edgwbs/book_storage_vuetify/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.if-blog.site/tags/emacs/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.if-blog.site/tags/hugo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.if-blog.site/tags/google-analytics/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -69,6 +71,8 @@
 <url> <loc>https://www.if-blog.site/tags/docker/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.if-blog.site/tags/react/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.if-blog.site/tags/gatsby/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.if-blog.site/tags/vue-js/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.if-blog.site/tags/vuetify/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.if-blog.site/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.if-blog.site/2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.if-blog.site/3</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
