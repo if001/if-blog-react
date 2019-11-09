@@ -275,7 +275,7 @@ module.exports = {
       tech: "vue.js",
       name: "FaVuejs",
       size: 17,
-      color: "deepgreen",
+      color: "green",
     },
     {
       tag: "vuetify",
