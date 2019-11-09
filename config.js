@@ -270,5 +270,19 @@ module.exports = {
       size: 17,
       color: "blue",
     },
+    {
+      tag: "vue.js",
+      tech: "vue.js",
+      name: "FaVuejs",
+      size: 17,
+      color: "deepgreen",
+    },
+    {
+      tag: "vuetify",
+      tech: "vuetify",
+      name: "FaVuejs",
+      size: 17,
+      color: "blue",
+    },
   ],
 };
