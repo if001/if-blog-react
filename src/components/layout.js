@@ -11,6 +11,7 @@ import { StaticQuery, graphql } from "gatsby"
 import "bootstrap/dist/css/bootstrap.css"
 import Header from "./header/header"
 import "./layout.css"
+import "./my_layout.css"
 
 const Layout = ({ children }) => {
 
@@ -49,7 +50,7 @@ const Layout = ({ children }) => {
                 backgroundColor: "rgb(238, 238, 238)"
             }}
           >
-            <main className="p-4 pt-5">{children}</main>
+            <main className="xs-padding sm-lt-padding">{children}</main>
             <footer className="text-center">
               <hr/>
               <p className="d-inline">© 2017 <a className="text-info" href="https://willjw3.github.io/">if-blog.site</a>, All Rights Reserved.</p>

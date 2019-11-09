@@ -27,7 +27,7 @@ const IndexPage = ({data}) => {
             <div className="container-fluid">
                 <div className="post-list-main">
                     <div className="row">
-                        <div className="col-12 col-xl-9 col-lg-9">
+                        <div className="col-12 col-xl-9 col-lg-9 p-0">
                             {posts.map((post) => {
                                 const tags = post.node.frontmatter.tags;
                                 return (
@@ -36,7 +36,7 @@ const IndexPage = ({data}) => {
                                             to={post.node.fields.slug}
                                             className="text-dark"
                                         >
-                                            <h2 className="title">{post.node.frontmatter.title}</h2>
+                                        <h2 className="title">{post.node.frontmatter.title}</h2>
                                         </Link>
                                         <small className="d-block text-info"><i>Published
                                             on {post.node.frontmatter.date}</i>
