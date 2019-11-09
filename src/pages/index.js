@@ -27,7 +27,7 @@ const IndexPage = ({data}) => {
             <div className="container-fluid">
                 <div className="post-list-main">
                     <div className="row">
-                        <div className="col-12 col-xl-9 col-lg-9 p-0">
+                        <div className="col-12 col-xl-9 col-lg-9 p-0 pb-5">
                             {posts.map((post) => {
                                 const tags = post.node.frontmatter.tags;
                                 return (

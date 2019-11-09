@@ -8,6 +8,6 @@
 /* 544px以上 */
 @media (min-width: 544px) {
     main.sm-lt-padding {
-	padding: 3rem 1.5rem 0 1.5rem !important;
+	padding: 3rem 2.0rem 0 2.0rem !important;
     }
 }
