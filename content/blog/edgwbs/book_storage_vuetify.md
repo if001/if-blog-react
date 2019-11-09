@@ -2,15 +2,17 @@
 title: "Vue.js+typescriptでVuetifyを使いマテリアルデザインに入門する"
 slug: "book-storage-vue"
 tags: ["vue.js", "WebApp", "vuetify"]
-date: "2019-10-20T00:00:00+09:00"
+date: "2019-11-09T00:01:00+09:00"
 published: true
 ---
 
 ## はじめに
-Vuetifyは、Vue.jsで使えるマテリアルデザインのフレームワークです。
+Vuetifyは、Vue.jsで使えるマテリアルデザインのフレームワークです。  
 https://vuetifyjs.com/ja/
 
 マテリアルデザインに入門すべく、Vuetifyを使って読んだ本を管理するサービスを作ってみました。
+
+[Book Storage](https://bookstrage.edgwbs.net)
 
 <img width="500" height="300" alt="bookstrage-test.mov.gif" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/204896/b07210d9-39e5-9f8f-44b2-313055068483.gif">
 
@@ -23,7 +25,7 @@ https://vuetifyjs.com/ja/
 
 ドキュメントが充実しており、基本的にドキュメントを見ると簡単に使えるという印象です。ドキュメントはjavascriptで書かれているため、typescriptで使う場合には、読み換える必要があります。
 
-サポートブラウザはドキュメントを参照
+サポートブラウザはドキュメントを参照  
 https://vuetifyjs.com/ja/getting-started/quick-start#supported-browsers
 
 2019年7月にv2.0.0がリリースされ、旧バージョン(v1.5.0)から記法が大きく変わったので、その際に注意する点も含め紹介していきます。
@@ -60,7 +62,7 @@ $   Prototype (rapid development)
 $   Configure (advanced)
 ```
 
-ツリーシェイキングについては、こちらの記事がわかりやすかったです。
+ツリーシェイキングについては、こちらの記事がわかりやすかったです。  
 https://qiita.com/genshun9/items/4a00aa6c709b9f024821
 
 ツリーシェイキングはwebpack4から利用でき、`vue cli3`はwebpack4上に構築されるため、`vue cli3`を利用していると自動で利用できるようになります。vuetifyのバージョンは`2.0.0`。
@@ -116,7 +118,7 @@ $ npm install vuetify --save
 
 上記の`src/plugins/vuetify.ts`を新たに作成。
 
-詳しくはドキュメントを参考
+詳しくはドキュメントを参考  
 https://vuetifyjs.com/ja/getting-started/quick-start
 
 ## Grid System
@@ -231,7 +233,7 @@ https://vuetifyjs.com/ja/components/grids
 
 <img width="763" alt="スクリーンショット 2019-08-25 19.49.17.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/204896/5d0aa9c3-a0a6-ea8e-6d9a-39787a2bfbec.png">
 
-その他の色は、ドキュメントを参照
+その他の色は、ドキュメントを参照  
 https://vuetifyjs.com/ja/styles/colors
 
 #### outlined button
@@ -275,7 +277,7 @@ loadingプロパティにboolean値を設定することで、trueの場合に�
 
 ```
 
-その他の設定は、ドキュメントを参照
+その他の設定は、ドキュメントを参照  
 https://vuetifyjs.com/ja/components/buttons
 
 ## Pagination
