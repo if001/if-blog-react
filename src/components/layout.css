@@ -205,7 +205,8 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 20%, 0.8);
+  /* color: hsla(0, 0%, 20%, 0.8); */
+  color: #333;
   font-family: 'Roboto', sans-serif;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: normal;
