@@ -13,11 +13,12 @@ const WebService = () => {
                     target="_blank">https://bookreports.edgwbs.net</a>
             </div>
 
-            {/*<div className="m-2">*/}
-            {/*    <div>Book Storage</div>*/}
-            {/*    <a href="" target="_blank">hoge</a>*/}
-            {/*</div>*/}
-
+	    <div className="m-2">
+                <div>BookStorage</div>
+                <a href="https://bookstorage.edgwbs.net" 
+                    rel="noopener noreferrer"
+                    target="_blank">https://bookreports.edgwbs.net</a>
+            </div>
         </div>
     )
 };

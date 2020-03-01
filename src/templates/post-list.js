@@ -29,7 +29,7 @@ const PostList = (props) => {
             <div className="container-fluid">
                 <div className="post-list-main">
                     <div className="row">
-                        <div className="col-12 col-xl-9 col-lg-9 p-0 mb-5">
+                        <div className="col-12 col-xl-9 col-lg-9 p-0 mb-3">
                             {posts.map((post) => {
                                 const tags = post.node.frontmatter.tags;
                                 return (
