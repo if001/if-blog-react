@@ -284,5 +284,12 @@ module.exports = {
       size: 17,
       color: "blue",
     },
+    {
+      tag: "android",
+      tech: "android",
+      name: "FaAndroid",
+      size: 17,
+      color: "green",
+    },
   ],
 };
