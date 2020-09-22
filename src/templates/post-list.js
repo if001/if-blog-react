@@ -40,13 +40,13 @@ const PostList = (props) => {
                                         >
                                             <h2 className="title">{post.node.frontmatter.title}</h2>
                                         </Link>
-                                        <small className="d-block text-info"><i>Published
-                                            on {post.node.frontmatter.date}</i>
-                                        </small>
-                                        <p className="mt-3 d-inline">{post.node.excerpt}</p>
                                         <div className="d-block">
                                             <span className="mr-2"><FaTags/></span>{getTechTags(tags)}
                                         </div>
+					<small className="d-block text-info"><i className="float-right">Published
+                                            on {post.node.frontmatter.date}</i>
+                                        </small>
+					<p className="mt-3 d-inline">{post.node.excerpt}</p>
                                     </div>
                                 )
                             })}
